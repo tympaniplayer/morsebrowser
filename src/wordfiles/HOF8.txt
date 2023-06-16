@@ -1,5 +1,6 @@
 CO 
-FL
+FL 
 {OH|ohio} 
-SC
-SD
+{OR|oregon} 
+SC 
+SD 

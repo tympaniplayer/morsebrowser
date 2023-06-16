@@ -6,6 +6,7 @@ import { ICookieHandler } from '../cookies/ICookieHandler'
 import { CookieInfo } from '../cookies/CookieInfo'
 import { GeneralUtils } from '../utils/general'
 import { MorseCookies } from '../cookies/morseCookies'
+import { VoiceBufferInfo } from './VoiceBufferInfo'
 
 export class MorseVoice implements ICookieHandler {
   voices = []
@@ -21,13 +22,15 @@ export class MorseVoice implements ICookieHandler {
   voicePitch:ko.Observable<number>
   voiceLang:ko.Observable<string>
   voiceVoices:ko.ObservableArray<any>
-  voiceBuffer:Array<any>
+  voiceBuffer:Array<VoiceBufferInfo>
+  voiceBufferMaxLength:ko.Observable<number>
   ctxt:MorseViewModel
   voiceSpelling:ko.Observable<boolean>
   // keep a reference because read that garbage collector can grab
   // and onend never fires?!
   currentUtterance:SpeechSynthesisUtterance
   voiceLastOnly:ko.Observable<boolean>
+  manualVoice:ko.Observable<boolean>
 
   constructor (context:MorseViewModel) {
     MorseCookies.registerHandler(this)
@@ -44,8 +47,10 @@ export class MorseVoice implements ICookieHandler {
     this.voiceLang = ko.observable('en-us')
     this.voiceVoices = ko.observableArray([])
     this.voiceBuffer = []
-    this.voiceSpelling = ko.observable(false)
+    this.voiceBufferMaxLength = ko.observable(1)
+    this.voiceSpelling = ko.observable(true)
     this.voiceLastOnly = ko.observable(false)
+    this.manualVoice = ko.observable(false)
     const speechDetection = EasySpeech.detect()
 
     if (speechDetection.speechSynthesis && speechDetection.speechSynthesisUtterance) {
@@ -247,6 +252,15 @@ export class MorseVoice implements ICookieHandler {
     target = cookies.find(x => x.key === 'voiceLastOnly')
     if (target) {
       this.voiceLastOnly(GeneralUtils.booleanize(target.val))
+    }
+    target = cookies.find(x => x.key === 'voiceRecap')
+    if (target) {
+      this.manualVoice(GeneralUtils.booleanize(target.val))
+    }
+
+    target = cookies.find(x => x.key === 'voiceBufferMaxLength')
+    if (target) {
+      this.voiceBufferMaxLength(parseInt(target.val))
     }
   }
 

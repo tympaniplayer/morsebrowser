@@ -17,6 +17,10 @@
             "filename": "INT2_VST.json"
         },
         {
+            "display": "Reverse VST",
+            "filename": "INT2_RVST.json"
+        },
+        {
             "display": "Groups of 5",
             "filename": "INT2_Groups_5.json"
         },
@@ -33,12 +37,20 @@
             "filename": "INT2_VET.json"
         },
         {
-            "display": "Instant Word Recognition",
-            "filename": "INT2_IWR.json"
+            "display": "Reverse VET",
+            "filename": "INT2_RVET.json"
         },
         {
-            "display": "Progressive Word Building",
-            "filename": "INT2_PWG.json"
+            "display": "Instant Word Recognition",
+            "filename": "IWR.json"
+        },
+        {
+            "display": "Sending Practice",
+            "filename": "INT2_Sending.json"
+        },        
+        {
+            "display": "Suduko",
+            "filename": "suduko20.json"
         },
         {
             "display": "Voice On & Spell On",

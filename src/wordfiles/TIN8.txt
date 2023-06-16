@@ -1,9 +1,10 @@
 AR 
 {IN|indiana} 
-IA
-NE
-RI
-TN
-UT
-WA
-WI
+IA 
+NE 
+{OR|oregon} 
+RI 
+TN 
+UT 
+WA 
+WI 

@@ -13,6 +13,10 @@
             "filename": "BC1_VST.json"
         },
         {
+            "display": "Reverse VST",
+            "filename": "BC1_RVST.json"
+        },
+        {
             "display": "Groups of 5",
             "filename": "BC1_Groups_of_5.json"
         },
@@ -25,9 +29,17 @@
             "filename": "BC1_VET.json"
         },
         {
+            "display": "Reverse VET",
+            "filename": "BC1_RVET.json"
+        },
+        {
+            "display": "Sending Practice",
+            "filename": "BC2_Sending.json"
+        },
+        {
             "display": "Voice On & Spell On",
             "filename": "BC1_Von_Son.json"
-        },
+        },      
         {
             "display": "Voice On & Spell Off",
             "filename": "BC1_Von_Soff.json"
@@ -39,6 +51,10 @@
         {
             "display": "Phrases – Voice On",
             "filename": "BC1_Phrases_Von.json"
+        },
+        {
+            "display": "Progress Evaluation",
+            "filename": "BC1_P_Eval.json"
         }
     ]
 }
